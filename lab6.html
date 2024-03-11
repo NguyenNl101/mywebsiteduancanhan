@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 6</title>
+  <style>
+      body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ad4c3e;
+    }
+
+    .tabs {
+      display: flex;
+      background-color: #333;
+      padding: 10px;
+    }
+
+    .tab {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #a44c2e;
+      cursor: pointer;
+      color: #fff;
+      background-color: #a44c2e;
+    }
+
+    .tab:hover {
+      background-color: #333;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+
+    .sub-tabs {
+      display: flex;
+      background-color: #ddd;
+      padding: 10px;
+    }
+
+    .sub-tab {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #a3d1ad;
+      cursor: pointer;
+      background-color: #a3d1ad;
+    }
+
+    .sub-tab:hover {
+      background-color: #ddd;
+    }
+
+    .sub-tab-content {
+      display: none;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav {
+      background-color: #ddd;
+      padding: 10px;
+    }
+
+    section {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    article {
+      flex: 2;
+      background-color: #fff;
+      padding: 20px;
+      margin-right: 20px;
+    }
+
+    aside {
+      flex: 1;
+      background-color: #eee;
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    a {
+      color: #3ac123;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #a3c23d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tabs">
+    <div class="tab" onclick="openTab('ex1')">Ex1</div>
+    <div class="tab" onclick="openTab('ex2')">Ex2</div>
+  </div>
+
+  <div id="ex1" class="tab-content">
+    <div class="sub-tabs">
+      <div class="sub-tab" onclick="openSubTab('ex1-design')">Design</div>
+      <div class="sub-tab" onclick="openSubTab('ex1-implementation')">Implementation</div>
+    </div>
+
+    <div id="ex1-design" class="sub-tab-content">
+      <!-- Ex1 Design Content Goes Here -->
+      <p>Ex1 Design</p>
+      <a href="ex1-design.jpg" download>Download Design</a>
+    </div>
+
+    <div id="ex1-implementation" class="sub-tab-content">
+      <!-- Ex1 Implementation Content Goes Here -->
+      <p>Ex1 Implementation</p>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    
+      <section>
+        <article>
+          <h2>Main Content</h2>
+          <p>This is the main content area following the F-pattern design.</p>
+        </article>
+    
+        <aside>
+          <h2>Sidebar</h2>
+          <p>This is the sidebar content.</p>
+        </aside>
+      </section>
+    </div>
+  </div>
+
+  <div id="ex2" class="tab-content">
+    <div class="sub-tabs">
+      <div class="sub-tab" onclick="openSubTab('ex2-design')">Design</div>
+      <div class="sub-tab" onclick="openSubTab('ex2-implementation')">Implementation</div>
+    </div>
+
+    <div id="ex2-design" class="sub-tab-content">
+      <!-- Ex2 Design Content Goes Here -->
+      <p>Ex2 Design</p>
+      <a href="ex2-design.jpg" download>Download Design</a>
+    </div>
+
+    <div id="ex2-implementation" class="sub-tab-content">
+      <!-- Ex2 Implementation Content Goes Here -->
+      <p>Ex2 Implementation</p>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    
+      <section>
+        <article>
+          <h2>Main Content 1</h2>
+          <p>This is the main content area following the Z-pattern design.</p>
+        </article>
+    
+        <aside>
+          <h2>Sidebar 1</h2>
+          <p>This is the sidebar content.</p>
+        </aside>
+    
+        <article>
+          <h2>Main Content 2</h2>
+          <p>This is another main content area following the Z-pattern design.</p>
+        </article>
+    
+        <aside>
+          <h2>Sidebar 2</h2>
+          <p>This is another sidebar content.</p>
+        </aside>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    function openTab(tabName) {
+      var i, tabContent;
+
+      // Hide all tabs
+      tabContent = document.getElementsByClassName('tab-content');
+      for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = 'none';
+      }
+
+      // Show the clicked tab
+      document.getElementById(tabName).style.display = 'block';
+    }
+
+    function openSubTab(subTabName) {
+      var i, subTabContent;
+
+      // Hide all sub-tabs
+      subTabContent = document.getElementsByClassName('sub-tab-content');
+      for (i = 0; i < subTabContent.length; i++) {
+        subTabContent[i].style.display = 'none';
+      }
+
+      // Show the clicked sub-tab
+      document.getElementById(subTabName).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

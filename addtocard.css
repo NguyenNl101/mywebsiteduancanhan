@@ -1,0 +1,95 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.cart-form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+select, input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Optional: Style for small screens */
+@media (max-width: 600px) {
+    .cart-form-container {
+        width: 90%;
+    }
+}
+/* Add this CSS to your addtocard.css file */
+
+body {
+    text-align: center;
+}
+
+.cart-form-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    display: inline-block;
+}
+
+.cart-form-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+img[alt="Image"] {
+    max-width: 50%; /* Adjust the size as needed */
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Adjust the margin as needed */
+}
+
+#downloadBtn {
+    margin-top: 20px;
+}

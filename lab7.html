@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab7</title>
+<style>
+/* ... (CSS styles) ... */
+table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px; /* Thêm khoảng cách trên */
+        }
+
+        .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* Style the close button */
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+/* (Bổ sung vào phần Style của bạn) */
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+#studentForm button {
+    padding: 10px;
+    background-color: #3ac123;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#studentForm button:hover {
+    background-color: #2a861c;
+}
+
+#studentTable th,
+#studentTable td {
+    background-color: #3ac123;
+    color: #fff;
+}
+
+#studentTable button {
+    background-color: #3ac123;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#studentTable button:hover {
+    background-color: #2a861c;
+}
+
+#ex1-design, #ex2-design {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ex1-design button, #ex2-design button {
+    margin-top: 10px;
+}
+
+body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5; /* Lighter background color */
+      transition: background-color 0.5s ease; /* Background color transition effect */
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px; /* Increased space between header and content */
+      text-align: center;
+      margin-bottom: 20px;
+      transform: translateY(0);
+      transition: transform 0.5s ease; /* Header translation effect */
+    }
+
+    header:hover {
+      transform: translateY(-10px);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center; /* Center align navigation items */
+      background-color: #444;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 15px; /* Increased space between navigation links */
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    section {
+      padding: 40px; /* Increased space between content and other elements */
+      text-align: center;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px; /* Increased font size */
+      background-color: #009688; /* Darker green color */
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00796b; /* Different color on hover */
+    }
+
+    input {
+      padding: 15px;
+      font-size: 18px; /* Increased font size */
+      margin-bottom: 20px; /* Increased space between input and button */
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Styles for the animated website */
+    section img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      transform: scale(1);
+      transition: transform 0.3s ease; /* Image scale transition effect */
+    }
+
+    section img:hover {
+      transform: scale(1.1);
+    }
+</style>
+</head>
+<body>
+
+<h2>Lab7</h2>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Requirement')" id="defaultOpen">Requirement</button>
+  <button class="tablinks" onclick="openCity(event, 'Design')">Design</button>
+  <button class="tablinks" onclick="openCity(event, 'Implement')">Implement</button>
+</div>
+
+<div id="Requirement" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times;</span>
+  <p>Tạo một trang Web có nội dung bất kỳ, sử dụng linh hoạt tất cả những phần sau: Input Controls, Navigation, Animations, Default Settings, Guided Actions</p>
+</div>
+
+<div id="Design" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times;</span>
+  <a href="lab7demo.html">Lab7</a>
+  
+</div>
+
+<div id="Implement" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times;</span>
+  <h2>Lab7</h2>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section>
+    <h2>Guided Actions</h2>
+    <p>Enter your name:</p>
+    <input type="text" id="nameInput" placeholder="Your Name">
+    <button onclick="displayGreeting()">Say Hello</button>
+  </section>
+
+  <section>
+    <h2>Featured Content</h2>
+    <img src="giangsinh.jpg" alt="Christmas Image">
+    <p>This is some featured content with animation.</p>
+  </section>
+
+  <footer>
+    &copy; 2024 Your Interactive and Animated Website. All rights reserved.
+  </footer>
+
+  <script>
+    function displayGreeting() {
+      var name = document.getElementById("nameInput").value;
+      alert("Hello, " + name + "!");
+    }
+  </script>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html>
+

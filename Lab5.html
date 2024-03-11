@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="addtocard.css">
+<title>Lab5</title>
+<style>
+/* ... (CSS styles) ... */
+table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px; /* Thêm khoảng cách trên */
+        }
+
+        .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* Style the close button */
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+/* (Bổ sung vào phần Style của bạn) */
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+#studentForm button {
+    padding: 10px;
+    background-color: #3ac123;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#studentForm button:hover {
+    background-color: #2a861c;
+}
+
+#studentTable th,
+#studentTable td {
+    background-color: #3ac123;
+    color: #fff;
+}
+
+#studentTable button {
+    background-color: #3ac123;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#studentTable button:hover {
+    background-color: #2a861c;
+}
+
+#ex1-design, #ex2-design {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ex1-design button, #ex2-design button {
+    margin-top: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Lab5</h2>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Requirement')" id="defaultOpen">Requirement</button>
+  <button class="tablinks" onclick="openCity(event, 'Design')">Design</button>
+  <button class="tablinks" onclick="openCity(event, 'Implement')">Implement</button>
+</div>
+
+<div id="Requirement" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times;</span>
+  <p>•(1) Tạo ra một user scenario<br>
+     •(2) Chọn 1 bước trong user scenario để thiết kế 1 form giao diện Web trên công cụ thiết kế đã chọn. Sau đó thiết kế trên Figma rồi chuyển sang html tương ứng cho thiết kế này.<br>
+</p>
+</div>
+
+<div id="Design" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times;</span>
+  <a href="Lab5thu.html">Lab5</a>
+  
+</div>
+
+<div id="Implement" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times;</span>
+  <h2>Add to Cart</h2>
+
+  <img src="giangsinh.jpg" alt="Product Image">
+  <label for="size">Select Size:</label>
+  <select id="size" name="size">
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <!-- Add more size options as needed -->
+  </select>
+  <label for="quantity">Quantity:</label>
+  <input type="number" id="quantity" name="quantity" min="1" value="1">
+  <button onclick="addToCart()">Add to Cart</button>
+<img src="user-scenario.png" alt="Image">
+<a href="https://www.figma.com/file/xkhhLGLYDLZC2uYNzAF02G/Untitled?type=whiteboard&node-id=0%3A1&t=Px7Qr02e5GMqOQDq-1" download><button id="downloadBtn">Go to Figma</button></a>
+<script src="script.js"></script>
+</div>
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html>

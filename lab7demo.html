@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 5</title>
+  <style>
+#downloadBtn {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #3ac123;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#downloadBtn:hover {
+  background-color: #2a861c;
+}
+
+a {
+  text-decoration: none;
+}
+
+.tab-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust as needed to center the content vertically */
+}
+
+.sub-tab-content {
+  text-align: center;
+}
+
+.sub-tab-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto; /* Căn giữa hình ảnh */
+  max-height: 450px; /* Đặt chiều cao tối đa cho hình ảnh */
+}
+
+#downloadBtn {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #3ac123;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#downloadBtn:hover {
+  background-color: #2a861c;
+}
+
+a {
+    text-decoration: none;
+  }
+
+  </style>
+</head>
+<body>
+
+
+  <div id="ex1" class="tab-content">
+    <div class="sub-tabs">
+      <div class="sub-tab" onclick="openSubTab('ex1-design')">Design</div>
+    </div>
+
+    <div id="ex1-design" class="sub-tab-content">
+      <!-- Ex1 Design Content Goes Here -->
+      <img src="Lab7.jpg" alt="Ex1 Design Image">
+      <a href="Lab7.jpg" download><button id="downloadBtn">Download Image</button></a>
+    </div>
+
+    <div id="ex1-design" class="sub-tab-content">
+      <!-- Ex1 Design Content Goes Here -->
+      <img src="Lab7 html.png" alt="Design Image">
+      <a href="Lab7.jpg" download><button id="downloadBtn">Download Image</button></a>
+      <a href="https://www.figma.com/file/xkhhLGLYDLZC2uYNzAF02G/Untitled?type=whiteboard&node-id=0%3A1&t=Px7Qr02e5GMqOQDq-1" download><button id="downloadBtn">Go to Figma</button></a>
+    </div>
+  </div>
+
+  <script>
+    function openTab(tabName) {
+      var i, tabContent;
+
+      // Hide all tabs
+      tabContent = document.getElementsByClassName('tab-content');
+      for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = 'none';
+      }
+
+      // Show the clicked tab
+      document.getElementById(tabName).style.display = 'block';
+    }
+
+    function openSubTab(subTabName) {
+      var i, subTabContent;
+
+      // Hide all sub-tabs
+      subTabContent = document.getElementsByClassName('sub-tab-content');
+      for (i = 0; i < subTabContent.length; i++) {
+        subTabContent[i].style.display = 'none';
+      }
+
+      // Show the clicked sub-tab
+      document.getElementById(subTabName).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
